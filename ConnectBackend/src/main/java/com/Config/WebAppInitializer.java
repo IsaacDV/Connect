@@ -6,17 +6,18 @@ public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServlet
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[]{WebAppInitializer.class};
+		System.out.println("IN WEBAPP INIT...root config method");
+		return new Class[]{DBConfig.class};
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return null;
+		return new Class[]{WebConfig.class};
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		return null;
+		return new String[]{"/"};
 	}
 
 }

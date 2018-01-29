@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body ng-app="app">
+
+	<div>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>USERNAME</th>
+					<th>FIRSTNAME</th>
+					<th>LASTNAME</th>
+					<th>CONTACT</th>
+					<th>EMAIL</th>
+					<th>Role</th>
+					<th>ACTION</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="u in users">
+					<td>{{u.username}}</td>
+					<td>{{u.firstname}}</td>
+					<td>{{u.lastname}}</td>
+					<td>{{u.contact}}</td>
+					<td>{{u.email}}</td>
+					<td>{{u.role}}</td>
+					<td><a ng-click="deleteUser(u.id)"><span class="glyphicon glyphicon-trash"></span></a>
+						<a href="#/getuser/{{u.id}}"><span class="glyphicon glyphicon-pencil"></span></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		{{error.message}}
+	</div>
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="controllers/usercontroller.js"></script>
+<script type="text/javascript" src="services/userservice.js"></script>
+<script type="text/javascript" src="controllers/editcontroller.js"></script>
+</html>
